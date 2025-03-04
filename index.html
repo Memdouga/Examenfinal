@@ -39,18 +39,18 @@
         }
         .hero {
             position: relative;
-            height: 80vh;
+            height: 90vh; /* Increased height for better image visibility */
             color: white;
             overflow: hidden;
         }
         .slider {
             display: flex;
             transition: transform 0.5s ease;
-            width: 200%; /* Adjusted for two slides */
+            width: 400%; /* Adjusted for four slides */
         }
         .slide {
             min-width: 100%;
-            height: 80vh;
+            height: 90vh; /* Increased height for better image visibility */
             background-size: cover;
             background-position: center;
             display: flex;
@@ -260,17 +260,33 @@
                     <a href="#" class="cta-button">Pruébalo gratis</a>
                 </div>
             </div>
-            <div class="slide" style="background-image: url('https://static1.colliderimages.com/wordpress/wp-content/uploads/2021/03/attack-on-titan-season-4-episode-16.jpg')">
+            <div class="slide" style="background-image: url('https://www.flixprime.cc/assets/images/banner1.jpg')">
                 <div class="slide-content">
                     <h1 class="slide-title">Vive la emoción</h1>
                     <p>Únete à la aventura de Attack on Titan.</p>
                     <a href="#" class="cta-button">Ver ahora</a>
                 </div>
             </div>
+            <div class="slide" style="background-image: url('https://www.flixprime.cc/assets/images/banner6.jpg')">
+                <div class="slide-content">
+                    <h1 class="slide-title">Disfruta de los mejores estrenos</h1>
+                    <p>La mejor experiencia de visualización.</p>
+                    <a href="#" class="cta-button">Explora ahora</a>
+                </div>
+            </div>
+            <div class="slide" style="background-image: url('https://www.flixprime.cc/assets/images/banner7.jpg')"> <!-- Replace with actual image URL -->
+                <div class="slide-content">
+                    <h1 class="slide-title">Momentos inolvidables</h1>
+                    <p>Regístrate y accede a todo el contenido.</p>
+                    <a href="#" class="cta-button">Únete ahora</a>
+                </div>
+            </div>
         </div>
         <div class="slider-dots" id="dots">
             <span class="dot active" onclick="changeSlide(0)"></span>
             <span class="dot" onclick="changeSlide(1)"></span>
+            <span class="dot" onclick="changeSlide(2)"></span>
+            <span class="dot" onclick="changeSlide(3)"></span>
         </div>
     </section>
 
@@ -291,7 +307,7 @@
 
         // Optional: Auto slide every 5 seconds
         setInterval(() => {
-            currentSlide = (currentSlide + 1) % 2; // Change to next slide
+            currentSlide = (currentSlide + 1) % 4; // Change to next slide
             changeSlide(currentSlide);
         }, 5000);
     </script>
@@ -371,5 +387,101 @@
         </div>
     </div>
 
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Características de Streaming</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #121212;
+        }
+        .features-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            padding: 20px;
+        }
+        .feature-box {
+            background-color: #1E1E1E;
+            border-radius: 10px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            color: white;
+        }
+        .feature-icon {
+            background-color: #FF6B00;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+        }
+        .feature-content h3 {
+            color: #FF6B00;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        .feature-content p {
+            color: #B0B0B0;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="features-container">
+        <div class="feature-box">
+            <div class="feature-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+                </svg>
+            </div>
+            <div class="feature-content">
+                <h3>+1400 canales de TV en vivo</h3>
+                <p>Televisión local e internacional de más de 30 países y los principales canales de cadenas.</p>
+            </div>
+        </div>
+        <div class="feature-box">
+            <div class="feature-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+                </svg>
+            </div>
+            <div class="feature-content">
+                <h3>+2500 Series</h3>
+                <p>Cientos de series de las principales plataformas, además de series clásicas</p>
+            </div>
+        </div>
+        <div class="feature-box">
+            <div class="feature-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+                </svg>
+            </div>
+            <div class="feature-content">
+                <h3>+13000 películas</h3>
+                <p>Películas de estreno, películas de plataformas líderes, cine latino y clásicos cinematográficos.</p>
+            </div>
+        </div>
+        <div class="feature-box">
+            <div class="feature-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+                </svg>
+            </div>
+            <div class="feature-content">
+                <h3>Todos los deportes en vivo</h3>
+                <p>Todo el fútbol mundial en vivo y más deportes: F1, Tennis, NBA, NFL, UFC y mucho más.</p>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
