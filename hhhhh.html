@@ -46,7 +46,163 @@
         .slider {
             display: flex;
             transition: transform 0.5s ease;
-            width: 200%; /* Adjusted for two slides */
+            width: 300%; /* Adjusted for three slides */
+        }
+        .slide {
+            min-width: 100%;
+            height: 80vh;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            padding: 0 50px;
+        }
+        .slide-content {
+            max-width: 50%;
+        }
+        .slide-title {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: #ff6b00;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .slider-dots {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+        }
+        .dot {
+            width: 10px;
+            height: 10px;
+            background-color: rgba(255,255,255,0.5);
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .dot.active {
+            background-color: #ff6b00;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">FLIX PRIME</div>
+        <nav class="nav">
+            <a href="#">Home</a>
+            <a href="#">Acerca</a>
+            <a href="#">Contenido</a>
+            <a href="#">Elige Tu País</a>
+            <a href="#" class="contact-sales">Contactar ventas</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="slider" id="slider">
+            <div class="slide" style="background-image: url('https://www.flixprime.cc/assets/images/banner4.jpg')">
+                <div class="slide-content">
+                    <h1 class="slide-title">Las películas más taquilleras</h1>
+                    <p>TODO POR SOLO S/19.90 AL MES</p>
+                    <a href="#" class="cta-button">Pruébalo gratis</a>
+                </div>
+            </div>
+            <div class="slide" style="background-image: url('https://static1.colliderimages.com/wordpress/wp-content/uploads/2021/03/attack-on-titan-season-4-episode-16.jpg')">
+                <div class="slide-content">
+                    <h1 class="slide-title">Vive la emoción</h1>
+                    <p>Únete à la aventura de Attack on Titan.</p>
+                    <a href="#" class="cta-button">Ver ahora</a>
+                </div>
+            </div>
+        </div>
+        <div class="slider-dots" id="dots">
+            <span class="dot active" onclick="changeSlide(0)"></span>
+            <span class="dot" onclick="changeSlide(1)"></span>
+        </div>
+    </section>
+
+    <script>
+        let currentSlide = 0;
+
+        function changeSlide(index) {
+            const slides = document.querySelector('.slider');
+            const dots = document.querySelectorAll('.dot');
+
+            currentSlide = index;
+            slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === currentSlide);
+            });
+        }
+
+        // Optional: Auto slide every 5 seconds
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % 2; // Change to next slide
+            changeSlide(currentSlide);
+        }, 5000);
+    </script>
+
+    <!-- Other sections like container, device section, etc. would follow here -->
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flix Prime - Las películas más taquilleras</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: black;
+            color: white;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background-color: #000;
+            color: white;
+        }
+        .logo {
+            color: #ff6b00;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .nav {
+            display: flex;
+            gap: 20px;
+        }
+        .nav a {
+            color: white;
+            text-decoration: none;
+        }
+        .hero {
+            position: relative;
+            height: 80vh;
+            color: white;
+            overflow: hidden;
+        }
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease;
         }
         .slide {
             min-width: 100%;
@@ -252,7 +408,7 @@
     </header>
 
     <section class="hero">
-        <div class="slider" id="slider">
+        <div class="slider">
             <div class="slide" style="background-image: url('https://www.flixprime.cc/assets/images/banner4.jpg')">
                 <div class="slide-content">
                     <h1 class="slide-title">Las películas más taquilleras</h1>
@@ -260,41 +416,27 @@
                     <a href="#" class="cta-button">Pruébalo gratis</a>
                 </div>
             </div>
-            <div class="slide" style="background-image: url('https://static1.colliderimages.com/wordpress/wp-content/uploads/2021/03/attack-on-titan-season-4-episode-16.jpg')">
+            <div class="slide" style="background-image: url('https://www.flixprime.cc/assets/images/banner5.jpg')">
+                <div class="slide-content">
+                    <h1 class="slide-title">Disfruta de los mejores estrenos</h1>
+                    <p>La mejor experiencia de visualización.</p>
+                    <a href="#" class="cta-button">Explora ahora</a>
+                </div>
+            </div>
+            <div class="slide" style="background-image: url('https://www.flixprime.cc/assets/images/banner6.jpg')">
                 <div class="slide-content">
                     <h1 class="slide-title">Vive la emoción</h1>
-                    <p>Únete à la aventura de Attack on Titan.</p>
+                    <p>Únete a la aventura de Attack on Titan.</p>
                     <a href="#" class="cta-button">Ver ahora</a>
                 </div>
             </div>
         </div>
-        <div class="slider-dots" id="dots">
-            <span class="dot active" onclick="changeSlide(0)"></span>
-            <span class="dot" onclick="changeSlide(1)"></span>
+        <div class="slider-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
         </div>
     </section>
-
-    <script>
-        let currentSlide = 0;
-
-        function changeSlide(index) {
-            const slides = document.querySelector('.slider');
-            const dots = document.querySelectorAll('.dot');
-
-            currentSlide = index;
-            slides.style.transform = `translateX(-${currentSlide * 100}%)`;
-
-            dots.forEach((dot, i) => {
-                dot.classList.toggle('active', i === currentSlide);
-            });
-        }
-
-        // Optional: Auto slide every 5 seconds
-        setInterval(() => {
-            currentSlide = (currentSlide + 1) % 2; // Change to next slide
-            changeSlide(currentSlide);
-        }, 5000);
-    </script>
 
     <div class="container">
         <div class="header">POR QUÉ ELEGIRNOS</div>
@@ -343,7 +485,7 @@
         </div>
     </div>
 
-    <!-- Device Compatibility Section -->
+    <!-- New Device Compatibility Section -->
     <div class="device-section">
         <h2 class="device-title">Desde Cualquier Dispositivo</h2>
         <div class="device-grid">
